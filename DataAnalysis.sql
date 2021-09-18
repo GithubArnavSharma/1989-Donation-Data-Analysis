@@ -48,13 +48,13 @@ ORDER BY COUNT(CMTE_ID) DESC;
 
 SELECT DISTINCT([CITY]), AVG(TRANSACTION_AMT)
 FROM itcont
-WHERE TRANSACTION_AMT > 0 AND TRANSACTION_AMT < 1000000
+WHERE TRANSACTION_AMT > 0 AND TRANSACTION_AMT < 100000
 GROUP BY [CITY]
 HAVING COUNT(CMTE_ID) > 2500
 ORDER BY AVG(TRANSACTION_AMT) DESC;
 
-/* RESULTS: Greenwich($1490), Little Rock($1200), Palm Beach($900), Miami Beach($786) and Los altos
- * ($700) are all the cities with the highest average donation amount */
+/* RESULTS: Greenwich($1100), Aspen($700), Palm Beach($600), Los altos($600), Menlo Park($500) are all
+ * the cities with the highest average donation amount */
 
 -- Get data on the types of elections, how common they were, and the average donation amount
 
