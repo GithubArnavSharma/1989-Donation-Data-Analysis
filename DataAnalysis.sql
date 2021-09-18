@@ -48,13 +48,13 @@ ORDER BY COUNT(CMTE_ID) DESC;
 
 SELECT DISTINCT([CITY]), AVG(TRANSACTION_AMT)
 FROM itcont
-WHERE TRANSACTION_AMT > 0
+WHERE TRANSACTION_AMT > 0 AND TRANSACTION_AMT < 1000000
 GROUP BY [CITY]
 HAVING COUNT(CMTE_ID) > 2500
 ORDER BY AVG(TRANSACTION_AMT) DESC;
 
-/* RESULTS: West Hollywood($7524), Greenwich($1916), Lake Forest($1836), Little Rock($1222), and Lake
- * Worth($1023) are all cities with the highest average of transaction money on average */
+/* RESULTS: Greenwich($1490), Little Rock($1200), Palm Beach($900), Miami Beach($786) and Los altos
+($700) are all the cities with the highest average donation amoun */
 
 -- Get data on the types of elections, how common they were, and the average donation amount
 
