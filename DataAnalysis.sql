@@ -82,14 +82,14 @@ ORDER BY COUNT(CMTE_ID) DESC;
  * Corporation were the next most common, donating an average of $42. Boeing employees were also common
  * donators, donating an average of $66 */
 
--- Get data on how different occupations affect transaction amounts
+--Get data on how different occupations affect donation amount
 
 SELECT DISTINCT(OCCUPATION), COUNT(CMTE_ID), AVG(TRANSACTION_AMT)
 FROM itcont
+WHERE TRANSACTION_AMT > 0 AND TRANSACTION_AMT < 100000
 GROUP BY OCCUPATION
 HAVING COUNT(CMTE_ID) > 1000
 ORDER BY COUNT(CMTE_ID) DESC;
 
-/* Results: The most popular occupations for donating are attorneys, physicians, engineers, professors, 
- * and consultants. Attorneys donate an average of $420, physicians $185, engineers, $145, professors
- * $112, and consultants $331 */
+/* Results: The most popular occupations for donating are: Retired at $94, Not Employed at $66, Attorney
+ * at $424, Physician at $178, and engineer at $146 */
